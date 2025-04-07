@@ -27,7 +27,7 @@ export default function AuthCheck({ children }: { children: React.ReactNode }) {
 
   // Show nothing while checking authentication status
   if (isChecking) {
-    return null;
+    return "loadding...";
   }
 
   return <>{children}</>;
