@@ -1,3 +1,4 @@
+import AuthCheck from "@/utils/AuthCheck";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
@@ -23,7 +24,7 @@ export default function LoginLayout({
 }>) {
   return (
     <div className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      {children}
+      <AuthCheck>{children}</AuthCheck>
     </div>
   );
 }

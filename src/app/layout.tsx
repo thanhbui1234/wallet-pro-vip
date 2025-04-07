@@ -1,3 +1,4 @@
+import { ReactQueryProvider } from "@/providers/query-provider";
 import AuthCheck from "@/utils/AuthCheck";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -28,7 +29,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AuthCheck>{children}</AuthCheck>
+        <ReactQueryProvider>
+          <AuthCheck>{children}</AuthCheck>
+        </ReactQueryProvider>
       </body>
     </html>
   );
